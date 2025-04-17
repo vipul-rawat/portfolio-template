@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500;
+  }
+  
+  .bg-gradient-custom {
+    @apply bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white/50 to-white/80 backdrop-blur-xl;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(to right, theme('colors.purple.500'), theme('colors.pink.500')) 1;
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px theme('colors.purple.500/20'),
+                0 0 20px theme('colors.pink.500/20');
+  }
+  to {
+    box-shadow: 0 0 20px theme('colors.purple.500/40'),
+                0 0 40px theme('colors.pink.500/40');
+  }
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
